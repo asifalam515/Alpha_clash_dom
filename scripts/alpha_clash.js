@@ -1,7 +1,11 @@
 function continueGame() {
   // step 1:generate a random alphabet:
   const alphabet = getARandomAlphabet();
-  console.log("Your random alphabet is ", alphabet);
+  // set randomly generated alphabet in UI
+  const currentAlphabetElement = document.getElementById("current_alphabet");
+  currentAlphabetElement.innerText = alphabet;
+  // set Background color
+  setBackgroundColorById(alphabet);
 }
 
 function play() {
