@@ -29,8 +29,12 @@ function handleKeyboardButtonPress(event) {
     let currentLife = scoreAndLife("current-life");
 
     const newLife = currentLife - 1;
+
     // set to ui
     showInUIById("current-life", newLife);
+    if (newLife === 0) {
+      gameOver();
+    }
     // currentLifeElement.innerText = newLife;
   }
 }
@@ -47,7 +51,16 @@ function continueGame() {
 }
 
 function play() {
+  // hide everything show only playground
   hideElementById("home-screen");
+  hideElementById("final-score");
   showElementById("play-ground");
+  // rest score and life:
+  showInUIById("current-life", 5);
+  showInUIById("current-score", 0);
   continueGame();
+}
+function gameOver() {
+  hideElementById("play-ground");
+  showElementById("final-score");
 }
