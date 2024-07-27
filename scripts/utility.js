@@ -28,6 +28,12 @@ function showInUIById(elementId, value) {
   const element = document.getElementById(elementId);
   element.innerText = value;
 }
+function getElementTextById(elementId) {
+  const element = document.getElementById(elementId);
+  const text = element.innerText;
+  return text;
+}
+
 function getARandomAlphabet() {
   // get or create an alphabet array
 
