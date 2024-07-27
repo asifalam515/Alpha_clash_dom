@@ -16,6 +16,18 @@ function removeBackgroundColorById(elementId) {
   element.classList.remove("bg-orange-400");
 }
 
+// score and life
+function scoreAndLife(elementId) {
+  const element = document.getElementById(elementId);
+  let currentValue = parseInt(element.innerText);
+  return currentValue;
+}
+
+// show things in ui
+function showInUIById(elementId, value) {
+  const element = document.getElementById(elementId);
+  element.innerText = value;
+}
 function getARandomAlphabet() {
   // get or create an alphabet array
 

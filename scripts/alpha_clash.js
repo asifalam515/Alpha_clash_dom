@@ -12,11 +12,26 @@ function handleKeyboardButtonPress(event) {
   // checked match or not
   if (playerPressed === expectedAlphabet) {
     console.log("you got a point");
-    console.log("perfect typing", expectedAlphabet);
+    // update the score
+    let currentScore = scoreAndLife("current-score");
+
+    const newScore = currentScore + 1;
+    // set to ui
+    showInUIById("current-score", newScore);
+
+    // start a new round of game
     removeBackgroundColorById(expectedAlphabet);
     continueGame();
   } else {
-    console.log("you misspell it");
+    // remaining life
+
+    // const currentLifeElement = document.getElementById("current-life");
+    let currentLife = scoreAndLife("current-life");
+
+    const newLife = currentLife - 1;
+    // set to ui
+    showInUIById("current-life", newLife);
+    // currentLifeElement.innerText = newLife;
   }
 }
 // capture keyboard keypress
